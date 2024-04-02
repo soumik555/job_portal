@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="./css/signup.css">
+</head>
+<body>
+<h1>Signup</h1>
+<form action="/signup" method="post" th:object="${portalUser}">
+Name: <input type="text" name="name" th:field="*{name}">
+<span th:errors="*{name}"></span>
+
+<br>
+Email: <input type="email" name="email"  th:field="*{email}">
+<span th:errors="*{email}"></span>
+<br>
+
+Mobile: <input type="number" name="mobile" th:field="*{mobile}">
+<span th:errors="*{mobile}"></span>
+<br>
+
+Date of Birth: <input type="date" name="dob" th:field="*{dob}">
+<span th:errors="*{dob}"></span>
+<br>
+Password: <input type="password" name="password" >
+<span th:errors="*{password}"></span>
+<br>
+
+Confirm Password: <input type="password" name="confirm_password">
+<span th:errors="*{confirm_password}"></span>
+<br>
+
+Role: <input type="radio" name="role" value="applicant" th:field="*{role}">Applicant
+		<input type="radio" name="role" value="recruiter"  th:field="*{role}">Recruiter
+		<span th:errors="*{role}"></span>
+        <br>
+<button>Signup</button>
+<br>
+
+</form>
+</body>
+</html>

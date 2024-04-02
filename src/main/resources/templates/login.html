@@ -1,0 +1,84 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+
+  <form action="">
+    <div class="login-container">
+        <h1> Login Page </h1>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Login</button>
+       
+    </div>
+
+    <div class="logo-container">
+
+      <div class="cc">
+        <div class="logo">
+          <img src="https://cdn.pixabay.com/photo/2017/08/04/07/57/avatar-2579301_1280.jpg" alt="User Logo" >
+         
+        </div>
+
+      </div>
+
+        
+      </div> <br>
+      <div class="dont">
+      <p class="ll" style="color: white;">Dont have an account?   <a href="/signup" class="register-link" style="color: red;">Register</a></p>
+      </div>
+
+      </form>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+
+  <form action="/login" method="post">
+    <div class="login-container">
+
+      
+        <h1> Login Page </h1> <h1 th:text="${msg}"></h1>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="email-phone" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Login</button>
+       
+    </div>
+
+    
+
+        
+     
+
+      </form>
+
+     
+
+      <div class="img-container">
+        <img src="https://i.pinimg.com/originals/e2/7c/87/e27c8735da98ec6ccdcf12e258b26475.png" alt="placeholder image">
+    </div>
+
+    <div class="dont">
+        <p class="ll" style="color: white;">Dont have an account?   <a href="/signup" class="register-link" style="color: red;">Register</a></p>
+        </div>
+</body>
+</html>
