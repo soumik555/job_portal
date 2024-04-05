@@ -90,6 +90,16 @@ public class GeneralController {
 		return userService.login(emph,password,map,session);
 		
 	}
+	
+	@GetMapping("/logout")
+	public String Logout()
+	
+	{
+		System.out.println("Control-/, Logoutpage is displayer");
+		return "logout.html";
+	}
+	
+	
 
 	
 	
