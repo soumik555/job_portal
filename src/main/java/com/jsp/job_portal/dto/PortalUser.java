@@ -3,7 +3,10 @@ package com.jsp.job_portal.dto;
 import java.time.LocalDate;
 
 
+
 import org.springframework.stereotype.Component;
+
+import com.jsp.job_portal.helper.AES;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,7 +32,6 @@ public class PortalUser {
 	@NotEmpty(message="*This is a required field")
 	@Email(message="*Enter Proper Email format")
 	private String email;
-	
 	@DecimalMin(value="6000000000",message="*Enter proper validation number")
 	@DecimalMax(value="9999999999",message="*Enter proper validation number")
 	private long mobile;
@@ -43,4 +45,9 @@ public class PortalUser {
 	private String role;
 	private int otp;
 	private boolean verified;
+	
+	
+	
+	
+	
 }

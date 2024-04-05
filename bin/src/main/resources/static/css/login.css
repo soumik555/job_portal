@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+
+
+  
+
+
+  body {
+    background-image: linear-gradient(#00dbde, #ff007b); /* Neon Color */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* 100% of the viewport height */
+    
+    background-size: contain;
+    background-repeat: repeat;
+    
+    
+}
+
+.login-container {
+    background-color: rgba(0, 0, 0, 0.614); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 85px;
+    width: 393px;
+    height: 93vh;
+     text-align: center; 
+    position: relative;
+    left: 305px;
+}
+.cc
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    right: 23px;
+}
+
+
+h1 {
+    color: white;
+}
+
+label {
+    color: white;
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    width: 90%;
+    padding: 8px;
+    margin-top: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5); /* Neon box shadow */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+input:hover, input:focus {
+    box-shadow: 0 0 15px rgba(0, 255, 204, 1); /* Neon box shadow on hover/focus */
+    outline: none;
+}
+
+button {
+    background-color: #cc208e; /* Neon Color */
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    position: relative;
+    top: 50px;
+}
+
+button:hover {
+    background-color: #33ffcc; /* Neon Color on hover */
+    animation: glow 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    to {
+        box-shadow: 0 0 20px #33ffcc; /* Neon glow effect */
+    }
+}
+
+form
+{
+    position: relative;
+    right: 150px;
+}
+
+.img-container {
+    position: relative;
+    right: 160px;
+    top:100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* text-align: center; */
+    /* margin-top: 20px; */
+}
+
+.img-container img {
+    width: 200px;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.img-container img:hover {
+    transform: scale(1.1);
+}
+
+
+
+.dont
+{
+    position: relative;
+    right:30px;
+}
+.ll
+{
+    position: relative;
+    top: 220px;
+    right: 332px;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+

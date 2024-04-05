@@ -10,7 +10,10 @@ import org.springframework.validation.BindingResult;
 
 import com.jsp.job_portal.dao.PortalUserDao;
 import com.jsp.job_portal.dto.PortalUser;
+import com.jsp.job_portal.helper.AES;
 import com.jsp.job_portal.helper.EmailSendinghelper;
+
+import jakarta.servlet.http.HttpSession;
 
 
 
@@ -70,9 +73,13 @@ public class PortalUserService {
 		  else
 		  {  
 			  System.out.println("No Errors");
+			  userDao.deleteIfExists(portalUser.getEmail());
 			  int otp=new Random().nextInt(100000,999999);
 			  System.out.println("Otp generated " + otp);
 			  portalUser.setOtp(otp);
+			  portalUser.setPassword(AES.encrypt(portalUser.getPassword(), "123"));
+			  portalUser.setPassword(AES.encrypt(portalUser.getConfirm_password(), "123"));
+			  System.out.println("Encrypted password is" + portalUser.getPassword());
 			  userDao.saveUser(portalUser);
 			  System.out.println("Data is saved in DB");
 			  emailhelper.sendOtp(portalUser);
@@ -101,6 +108,67 @@ public class PortalUserService {
 			map.put("id", portalUser.getId());
 			return "enter-otp";
 		}
+	}
+	public String resendOtp(int id, ModelMap map) {
+	
+		PortalUser portalUser= userDao.findUserById(id);
+		int otp=new Random().nextInt(100000,999999);
+		System.out.println("Otp ReGenerated- " + otp);
+		portalUser.setOtp(otp);
+		userDao.saveUser(portalUser);
+		System.out.println("Data is Updated in db");
+		emailhelper.sendOtp(portalUser);
+		System.out.println("Otp is sent to Email " + portalUser.getEmail());
+		map.put("msg", "otp Sent Again, Check");
+		map.put("id", portalUser.getId());
+		System.out.println("Control-enter-otp.html");
+		return "enter-otp.html";
+	}
+	
+	
+
+	
+	
+	public String login(String emph, String password, ModelMap map, HttpSession session) {
+		PortalUser portalUser = null;
+		try {
+			long mobile = Long.parseLong(emph);
+			portalUser = userDao.findUserByMobile(mobile);
+		} 
+		catch (NumberFormatException e) 
+		{
+			String email = emph;
+			portalUser = userDao.findUserEmail(email);
+		}
+		if (portalUser == null) 
+		{
+			map.put("msg", "Invalid Email or Phone Number");
+			return "login.html";
+		} else {
+			if (password.equals(AES.decrypt(portalUser.getPassword(), "123"))) {
+				if (portalUser.isVerified()) 
+				{
+					map.put("msg", "Login Success");
+					session.setAttribute("portalUser", portalUser);
+					if (portalUser.getRole().equals("applicant")) 
+					{
+						return "applicant-home.html";
+					} else {
+						return "recruiter-home.html";
+					}
+				} else
+				{
+					map.put("msg", "First Verify Your Email");
+					return "login.html";
+				}
+			} 
+			else 
+			{
+				map.put("msg", "Invalid Password");
+				return "login.html";
+			}
+		}
+
 	}
 	
 
