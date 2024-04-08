@@ -41,7 +41,7 @@
         input[type="text"]:hover, input[type="file"]:hover {
             box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
         }
-        button[type="submit"], button[type="button"] {
+        button[type="submit"], button[type="reset"] {
             background-color: green;
             color: white;
             padding: 10px 20px;
@@ -50,18 +50,21 @@
             cursor: pointer;
             transition: all 0.3s ease-in-out;
         }
-        button[type="submit"]:hover, .cancel-button:hover {
+        button[type="submit"]:hover, button[type="reset"]:hover {
             background-color: lightgreen;
             transform: scale(1.1);
         }
 
-        button[type="button"]:hover, .cancel-button:hover {
+        button[type="reset"] {
+            background-color: red;
+            color: white;
+        }
+        
+        button[type="reset"]:hover {
             background-color: lightcoral;
             transform: scale(1.1);
         }
-        
-        
-        
+
         button[type="submit"]:hover::before {
             content: '';
             display: block;
@@ -72,20 +75,8 @@
             left: 0;
             background: rgba(0, 128, 0, 0.3);
             animation: zoomInOut 1.5s infinite alternate;
-
         }
 
-        button[type="button"] {
-            background-color: red;
-            color: white;
-        }
-
-
-
-
-
-
-        
         @keyframes zoomInOut {
             0% {
                 transform: scale(1);
@@ -107,7 +98,6 @@
         <label for="education">Education</label>
         <input type="text" id="education" name="education" required>
         
-
         <label for="percentage">Percentage</label>
         <input type="text" id="percentage" name="percentage" required>
         
@@ -115,10 +105,9 @@
         <input type="file" id="resume" name="resume" accept="application/pdf" required>
         
         <button type="submit">Complete</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button type="button" class="cancel-button">Cancel</button>
+        <button type="reset" class="cancel-button">Cancel</button>
     </form>
 </div>
 
 </body>
 </html>
-

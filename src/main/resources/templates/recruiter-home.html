@@ -1,23 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiter Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            padding: 0;
+            background-color: #f2f2f2;
+            background-image: linear-gradient(#833ab4,#fd1d1d);
+            background-repeat: no-repeat;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .button {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+        }
+        .complete-profile {
+            background-color: #4CAF50; /* Green */
+        }
+        .post-jobs {
+            background-color: #fd1d1d; /* Red */
+        }
+        .view-jobs {
+            background-color: #fdd835; /* Yellow */
+        }
+        .logout {
+            background-color: #fd1d1d; /* Red */
+        }
+        .button:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
-	<h1 th:text="${msg}"></h1>
-	<h1>Recruiter Home Page</h1>
-	</br>
-	<button>Complete your profile</button>
-	</br></br>
-	<button>Post Job</button>
-	</br></br>
-	<button>View All Jobs</button> </br></br>
-	<button>Logout</button>
-	</br></br>
-	
-	
-	
-	
+	<h1 style="text-align: center; color: white;"  th:text="${msg}"></h1>
+
+<div class="header">
+    <h1>Recruiter Home Page</h1>
+</div>
+
+<div class="container">
+    <button class="button complete-profile">Complete your profile</button>
+    <button class="button post-jobs">Post Jobs</button>
+    <button class="button view-jobs">View Jobs</button>
+    <button class="button logout">Logout</button>
+</div>
+
 </body>
 </html>

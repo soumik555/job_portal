@@ -20,6 +20,6 @@ public class Recruiterdetails {
 	String companyName;
 	String companyAddress;
 	String aboutCompany;
-	String licenseNo;
+	long licenseNo;
 
 }
