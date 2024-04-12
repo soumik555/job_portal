@@ -1,16 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<link rel="stylesheet" href="./css/applicant-home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applicant Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            padding: 0;
+            background-color: #f2f2f2;
+            background-image: linear-gradient(#833ab4,#fd1d1d);
+            background-repeat: no-repeat;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .button {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+        }
+        .complete-profile {
+            background-color: green; /* Yellow */
+        }
+        .view-jobs, .applied-jobs {
+            background-color: #fdd835; /* Yellow */
+        }
+        .logout {
+            background-color: #fd1d1d; /* Red */
+        }
+        .button:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
-	<h1 th:text="${msg}"></h1>
-<h1>Applicant Home Page</h1>
-<button>Complete your Profile</button>
-<button>View Jobs</button>
-<button> View Applied Jobs</button> </br></br></br>
-<button>Logout</button>
+	<h1 th:text="${msg}" style="text-align: center; color: whitesmoke;"></h1>
+	
+
+<div class="header">
+    <h1>Applicant Homepage</h1>
+	<br>
+</div>
+
+<div class="container">
+	<th:block th:if="${!session.portalUser.profileComplete}">
+    <a href="/applicant/complete-profile"><button class="button complete-profile">Complete your Profile</button></a>
+
+
+	</th:block>
+	<br><br>
+    <button class="button view-jobs">View Jobs</button>
+    <button class="button applied-jobs">Applied Jobs</button>
+    <a href=/logout><button class="button logout">Logout</button></a>
+</div>
+
 </body>
 </html>

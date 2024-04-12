@@ -12,14 +12,16 @@ import lombok.Data;
 @Entity
 @Data
 @Component
-public class Recruiterdetails {
+public class RecruiterDetails  {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int id;
-	String companyName;
-	String companyAddress;
-	String aboutCompany;
-	long licenseNo;
+	 private int id;
+	 private String companyName;
+	 private String companyAddress;
+	 private long companyMobileNumber;
+	 private String licenseNo;
+	 private String aboutCompany;
+	 private boolean approved;
 
 }

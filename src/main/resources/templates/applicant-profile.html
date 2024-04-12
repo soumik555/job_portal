@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Applicant Complete your Profile Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    input[type="text"], input[type="file"], input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+        transform: scale(1.1);
+    }
+</style>
+</head>
+<body>
+
+<h2 style="text-align: center;">Applicant Complete your Profile Form</h2>
+
+<form action="/applicant/complete-profile" method="post" >
+
+    <label for="skills">Skills:</label>
+      
+        <input type="checkbox" id="skills" name="skills" >
+
+        JAVA
+        <input type="checkbox" id="skills" name="skills" >
+
+        SQL
+        <input type="checkbox" id="skills" name="skills" >
+
+
+        WebTech
+        <input type="checkbox" id="skills" name="skills" > 
+    
+    
+    
+    <br> <br>
+    
+    <label for="highestEducation">Highest Education:</label>
+    <input type="text" id="highestEducation" name="highestEducation" required>
+    <label for="10thPercentage">10th Percentage:</label>
+    <input type="text" id="10thPercentage" name="percentage10" required>
+    <label for="12thPercentage">12th Percentage:</label>
+    <input type="text" id="12thPercentage" name="percentage12" required>
+    <label for="degreePercentage">Degree Percentage:</label>
+    <input type="text" id="degreePercentage" name="percentageDegree" required>
+    <label for="masterPercentage">Master Percentage:</label>
+    <input type="text" id="masterPercentage" name="percentageMasters" required>
+    <label for="resume">Resume:</label>
+    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

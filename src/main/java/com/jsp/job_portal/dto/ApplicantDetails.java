@@ -12,14 +12,18 @@ import lombok.Data;
 @Entity
 @Data
 @Component
-public class Applicantdetails {
+public class ApplicantDetails   {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int id;
-	String skills;
-	String Education;
-	String Resume;
+	private int id;
+	private String[] skills;
+	private String highestEducation;
+	private double percentage10;
+	private double percentage12;
+	private double percentageDegree;
+	private double percentageMasters;
+	private String resumePath;
 	
 	
 

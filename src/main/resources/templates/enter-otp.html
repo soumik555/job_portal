@@ -12,21 +12,41 @@
 
         
     }
+
+    .container
+    {
+        position: absolute;
+        right: 600px;
+    }
+    button
+    {
+        
+        color: black;
+        background-color: yellow;
+        font-size: large;
+    }
 </style>
 </head>
 <body>
+    <div class="container">
 
     
-    <h1 th:text="${msg}" style="color: whitesmoke;"></h1>
+    <h1 th:text="${msg}" style="color: yellow;"></h1>
     <form action="/submit-otp" method="post">
-   <h1 style="color: whitesmoke;"> Enter Otp: </h1><input type="number" name="otp">
-    <input type="hidden" name="id" th:value="${id}">
-    <button>Submit</button>
+   <h1 style="color: whitesmoke;"> Enter Otp: </h1><input type="number" name="otp"> 
+    <input type="hidden" name="id" th:value="${id}"> <br><br>
+
+    
+    <button>Submit</button>	<a th:href="'/resend-otp/'+${id}"><Button>Resend-Otp</Button></a>
+
+     
 
 
     </form>
 	
 	</br>
-    <a th:href="'/resend-otp/'+${id}"><Button>Resend-Otp</Button></a>
+   
+
+      </div>
 </body>
 </html>

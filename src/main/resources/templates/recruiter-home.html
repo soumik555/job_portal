@@ -63,10 +63,14 @@
 </div>
 
 <div class="container">
-    <button class="button complete-profile">Complete your profile</button>
+    <th:block th:if="${!session.portalUser.profileComplete}">
+    <a href="/recruiter/complete-profile"><button class="button complete-profile">Complete your profile</button> </a>
+  </th:block>
+  <br>
+  <br>
     <button class="button post-jobs">Post Jobs</button>
     <button class="button view-jobs">View Jobs</button>
-    <button class="button logout">Logout</button>
+    <a href="/logout"><button class="button logout">Logout</button></a>
 </div>
 
 </body>

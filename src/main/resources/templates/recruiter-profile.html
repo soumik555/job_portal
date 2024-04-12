@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recruiter Complete your Profile</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  input[type="text"], input[type="tel"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  .submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .submit-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+  }
+  h2
+  {
+    text-align: center;
+  }
+  
+</style>
+</head>
+<body>
+
+<h2 >Recruiter Complete your Profile</h2>
+
+<form action="/recruiter/complete-profile" method="post">
+  <label for="company_name">Enter Company Name:</label>
+  <input type="text" id="company_name" name="companyName" required>
+  
+  <label for="company_address">Company Address:</label>
+  <input type="text" id="company_address" name="companyAddress" required>
+  
+  <label for="company_about">Company About:</label>
+  <textarea id="company_about" name="aboutCompany" rows="4" required></textarea>
+  
+  <label for="company_mobile">Company Mobile Number:</label>
+  <input type="tel" id="company_mobile" name="companyMobileNumber" required>
+  
+  <label for="license">License:</label>
+  <input type="text" id="license" name="licenseNo" required>
+  
+  <button type="submit" class="submit-btn">Submit</button>
+</form>
+
+</body>
+</html>

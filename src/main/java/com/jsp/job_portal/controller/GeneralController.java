@@ -92,13 +92,17 @@ public class GeneralController {
 	}
 	
 	@GetMapping("/logout")
-	public String Logout()
+	public String Logout(HttpSession session, ModelMap map)
 	
 	{
-		System.out.println("Control-/, Logoutpage is displayer");
-		return "logout.html";
+		session.removeAttribute("portalUser");
+		map.put("msg", "Logout Success");
+		return "home.html";
 	}
 	
+	
+	
+
 	
 
 	

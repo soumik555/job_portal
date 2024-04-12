@@ -9,11 +9,12 @@
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('../images/Featured-Images-Blog-News-Video-Thumbnails-10.png'); /* Specify your background image URL here */
+    background-image: url('images/Featured-Images-Blog-News-Video-Thumbnails-10.png'); /* Fixed URL */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 300vh;
+    color: whitesmoke;
   }
   
   nav {
@@ -24,11 +25,6 @@
     height: 60px;
   }
 
-  p{
-    position: relative;
-    right: 290px;
-  }
-  
   nav a {
     color: #fff;
     text-decoration: none;
@@ -61,14 +57,13 @@
   
   .container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 20px;
     text-align: center;
-    color: #fff;
   }
   
   .job-search {
-    margin-top: 100px;
+    margin-top: 20px;
   }
   
   .job-search input[type="text"] {
@@ -86,17 +81,54 @@
     color: #fff;
     cursor: pointer;
   }
+
+  section {
+    margin-top: 20px;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+
+  /* Card Styles */
+  .card {
+    display: inline-block;
+    width: 400px;
+    
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  .card:hover img {
+    transform: scale(1.1);
+  }
 </style>
 </head>
 <body>
 
 <nav>
-    <p style="color: whitesmoke;">Welcome to our Job Portal</p>
-  <a href="#">Home</a>
-  <a href="#">About</a>
-  <a href="signup">Signup</a>
-  <a href="login">Login</a>
-  <a href="#">Contact us</a>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="signup">Signup</a>
+    <a href="login">Login</a>
+    <a href="#">Contact us</a>
 </nav>
 
 <div class="container">
@@ -107,7 +139,46 @@
       <input type="submit" value="Search">
     </form>
   </div>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum nibh ut ultricies venenatis. Maecenas quis magna arcu. Donec lacinia purus id elit blandit, at semper mauris volutpat. Integer nec neque nec mi lacinia ultricies.</p>
+    <p>Curabitur ullamcorper, velit a tempus vestibulum, justo purus faucibus ex, ut rutrum purus risus quis felis. Suspendisse potenti. Fusce porta, justo id eleifend lacinia, dui risus placerat leo, sed sollicitudin purus purus in enim.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or inquiries, feel free to reach out to us:</p>
+    <ul>
+        <li>Email: info@jobportal.com</li>
+        <li>Phone: +1234567890</li>
+        <li>Address: 123 Job Street, Cityville, Country</li>
+    </ul>
+    <!-- You can add a contact form here if you want -->
+  </section>
+
+  <!-- Cards Section -->
+  <div class="card">
+    <img src="https://png.pngtree.com/thumb_back/fh260/background/20221121/pngtree-exploring-career-opportunities-woman-scanning-online-job-portal-for-employment-prospects-photo-image_41893126.jpg" alt="Card Image">
+  </div>
+
+  <div class="card">
+    <img src="	https://media.istockphoto.com/id/1129644198/vector/recruitment-modern-line-design-style-vector-illustration.jpg?s=612x612&w=0&k=20&c=ZBHS-k5azwnflpGW5gRmseB4CxUOpUUmGA3I45mJk9E=" alt="Card Image">
+  </div>
+
+  <div class="card">
+    <img src="	https://t3.ftcdn.net/jpg/02/10/87/80/360_F_210878007_vIRqeFVZAeODdJ4dAbw4J8O6kLKzxUfi.jpg" alt="Card Image">
+  </div>
+
+  <div class="card">
+    <img src="	https://thumbs.dreamstime.com/b/text-sign-showing-re-hiring-conceptual-photo-advertising-employment-workforce-placement-new-job-woman-wear-formal-work-suit-161388358.jpg" alt="Card Image">
+  </div>
+
 </div>
+
+<footer>
+  <p>&copy; 2024 Job Portal. All rights reserved.</p>
+</footer>
 
 </body>
 </html>

@@ -6,12 +6,12 @@ import java.time.LocalDate;
 
 import org.springframework.stereotype.Component;
 
-import com.jsp.job_portal.helper.AES;
-
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.DecimalMax;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Email;
@@ -45,8 +45,16 @@ public class PortalUser {
 	private String role;
 	private int otp;
 	private boolean verified;
+	private boolean profileComplete;
 	
-	
+
+    
+    
+	@OneToOne(cascade = CascadeType.ALL)
+	private RecruiterDetails recruiterDetails;
+
+	@OneToOne(cascade = CascadeType.ALL)
+	private ApplicantDetails applicantDetails;
 	
 	
 	
