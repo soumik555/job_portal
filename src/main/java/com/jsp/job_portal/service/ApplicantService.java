@@ -30,7 +30,7 @@ public class ApplicantService {
 		} else {
 			
 			
-			String resumePath = uploadTocloudinary(resume);;// Get from cloudinary
+			String resumePath = uploadTocloudinary(resume);// Get from cloudinary
 			details.setResumePath(resumePath);
 			portalUser.setApplicantDetails(details);
 			portalUser.setProfileComplete(true);

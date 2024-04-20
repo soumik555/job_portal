@@ -1,8 +1,6 @@
 package com.jsp.job_portal.controller;
 
 
-import java.io.File;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

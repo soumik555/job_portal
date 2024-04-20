@@ -16,7 +16,8 @@ public class RecruiterService {
 	@Autowired
 	PortalUserDao userDao;
 
-	public String saveRecruiterDetails(RecruiterDetails details, HttpSession session, ModelMap map) {
+	public String saveRecruiterDetails(RecruiterDetails details, HttpSession session, ModelMap map)
+	{
 		PortalUser portalUser = (PortalUser) session.getAttribute("portalUser");
 		if (portalUser == null) {
 			map.put("msg", "Invalid Session");
